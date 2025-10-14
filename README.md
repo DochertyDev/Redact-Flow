@@ -193,8 +193,4 @@ docker compose down
 
 Once both are running, the application will typically be accessible in your web browser at `http://localhost:5173`.
 
----
 
-## A Note on the `.context` Directory
-
-The `.context` directory in this repository is used by the Gemini AI assistant for storing session-specific information, development notes, and task instructions. It is not required for the application to run and can be safely ignored by contributors.
