@@ -1,0 +1,60 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "RedactFlow" [level=1] [ref=e6]
+    - generic [ref=e7]:
+      - img [ref=e9] [cursor=pointer]
+      - img [ref=e12]
+  - navigation [ref=e15]:
+    - generic [ref=e16]:
+      - button [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - img [ref=e23]
+          - generic [ref=e26]: Upload Document
+        - listitem [ref=e27]:
+          - generic [ref=e28]: "2"
+          - generic [ref=e29]: Sanitize & Edit
+        - listitem [ref=e30]:
+          - generic [ref=e31]: "3"
+          - generic [ref=e32]: Detokenize & Download
+      - button [ref=e34] [cursor=pointer]:
+        - img [ref=e35]
+  - main [ref=e37]:
+    - generic [ref=e41]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - heading "Original Document" [level=2] [ref=e46]
+            - generic [ref=e47]:
+              - button [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+              - button "Sanitize" [disabled] [ref=e55]:
+                - generic [ref=e56]:
+                  - img [ref=e57]
+                  - text: Sanitize
+          - generic [ref=e62]: This is a test document with some PII like John Doe and 123-456-7890.
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - heading "Sanitized Document" [level=2] [ref=e65]
+            - generic [ref=e66]:
+              - button [ref=e68] [cursor=pointer]:
+                - img [ref=e69]
+              - button [ref=e75] [cursor=pointer]:
+                - img [ref=e76]
+              - button [ref=e80] [cursor=pointer]:
+                - img [ref=e81]
+          - generic [ref=e83]:
+            - text: This is a test document with some PII like
+            - generic [ref=e84]: "[PERSON_1]"
+            - text: and
+            - generic [ref=e85]: "[PHONE_NUMBER_1]"
+            - text: .
+      - generic [ref=e88]:
+        - button [ref=e89] [cursor=pointer]:
+          - img [ref=e90]
+        - generic [ref=e92]: Detected Tokens (2)
+```

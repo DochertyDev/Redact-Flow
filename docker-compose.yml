@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - /app/venv # Exclude venv from host mount to prevent issues
+    environment:
+      # Ensure CORS_ORIGINS includes the frontend URL when running via Docker
+      - CORS_ORIGINS=["http://localhost:5173"]
+      - HOST=0.0.0.0
+    # Command is already defined in Dockerfile, but can be overridden here if needed
+    # command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Exclude node_modules from host mount
+    depends_on:
+      - backend
+    # Command is already defined in Dockerfile, but can be overridden here if needed
+    # command: npm run dev -- --host 0.0.0.0
