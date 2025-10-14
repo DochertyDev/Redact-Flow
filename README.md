@@ -30,7 +30,7 @@ For the easiest way to run RedactFlow, download and install the pre-built deskto
 ### Steps
 
 1.  **Navigate to Releases:**
-    - Go to the [**Releases**](/releases) page for this repository.
+    - Go to the [**Releases**](https://github.com/DochertyDev/Redact-Flow/releases) page for this repository.
 
 2.  **Download the Installer:**
     - On the latest release, look under the **Assets** section.
