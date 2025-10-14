@@ -29,18 +29,18 @@ For the easiest way to run RedactFlow, download and install the pre-built deskto
 
 ### Steps
 
-1.  **Navigate to Releases:**
+1. **Navigate to Releases:**
     - Go to the [**Releases**](https://github.com/DochertyDev/Redact-Flow/releases) page for this repository.
 
-2.  **Download the Installer:**
+2. **Download the Installer:**
     - On the latest release, look under the **Assets** section.
     - Click on the `RedactFlow.Setup.X.Y.Z.exe` file to download it.
 
-3.  **Run the Installer:**
+3. **Run the Installer:**
     - Double-click the downloaded `.exe` file.
     - Follow the on-screen instructions. It's generally safe to accept the default installation options.
 
-4.  **Launch RedactFlow:**
+4. **Launch RedactFlow:**
     - Once the installation is complete, you can launch RedactFlow from your Windows Start Menu or via the desktop shortcut that may have been created.
 
 ---
@@ -142,14 +142,17 @@ Before you begin, ensure you have the following installed:
 If you have made changes to the application and want to create a new distributable installer for Windows, follow these steps:
 
 1. **Navigate to the `desktop` directory:**
+
    ```bash
    cd Redact-Flow/desktop
    ```
 
 2. **Run the distribution command:**
+
    ```bash
    npm run dist
    ```
+
    This command will automatically build the frontend, copy the necessary files, and create a new installer in the `desktop/dist` directory.
 
 ---
@@ -196,5 +199,3 @@ docker compose down
     ```
 
 Once both are running, the application will typically be accessible in your web browser at `http://localhost:5173`.
-
-

@@ -97,7 +97,7 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
     },
-    icon: path.join(__dirname, 'assets', 'icon.png')
+    icon: path.join(__dirname, 'assets', 'icons', 'android-chrome-512x512.png')
   });
 
   // Load the frontend

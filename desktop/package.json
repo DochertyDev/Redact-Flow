@@ -39,7 +39,7 @@
     ],
     "win": {
       "target": ["nsis"],
-      "icon": "assets/icon.ico"
+      "icon": "assets/icons/android-chrome-512x512.png"
     },
     "mac": {
       "target": ["dmg"],
