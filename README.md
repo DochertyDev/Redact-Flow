@@ -21,7 +21,7 @@ Both components are designed to run locally on your machine, ensuring that sensi
 
 ## Installation (Desktop Application)
 
-For the easiest way to run RedactFlow, download and install the pre-built desktop application. This version is self-contained and does not require Docker, Python, or Node.js to be installed on your system.
+For the easiest way to run RedactFlow, download and install the pre-built desktop application from the project's official GitHub Releases. This version is self-contained and does not require Docker, Python, or Node.js to be installed on your system.
 
 ### Prerequisites
 
@@ -29,14 +29,18 @@ For the easiest way to run RedactFlow, download and install the pre-built deskto
 
 ### Steps
 
-1. **Download the Installer:**
-    - Locate the latest `RedactFlow Setup X.Y.Z.exe` installer file. If you have just built the application yourself, you will find it in the `desktop/dist` directory of your project.
+1.  **Navigate to Releases:**
+    - Go to the [**Releases**](/releases) page for this repository.
 
-2. **Run the Installer:**
+2.  **Download the Installer:**
+    - On the latest release, look under the **Assets** section.
+    - Click on the `RedactFlow.Setup.X.Y.Z.exe` file to download it.
+
+3.  **Run the Installer:**
     - Double-click the downloaded `.exe` file.
     - Follow the on-screen instructions. It's generally safe to accept the default installation options.
 
-3. **Launch RedactFlow:**
+4.  **Launch RedactFlow:**
     - Once the installation is complete, you can launch RedactFlow from your Windows Start Menu or via the desktop shortcut that may have been created.
 
 ---
