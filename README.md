@@ -199,3 +199,141 @@ docker compose down
     ```
 
 Once both are running, the application will typically be accessible in your web browser at `http://localhost:5173`.
+
+---
+
+## Visuals
+
+### High-Lelel Architecture Diagram
+
+```mermaid
+graph TD;
+    subgraph User Interaction
+        User([User]);
+        WebApp[Frontend - React/Vite];
+    end
+
+    subgraph Backend Services
+        FastAPI[Backend - FastAPI];
+        PresidioSvc[PII Analysis Service];
+        TokenMapSvc[Token Management Service];
+        EncryptionSvc[Encryption Service];
+    end
+
+    subgraph Application Packaging
+        Electron[Electron Wrapper];
+        Docker[Docker Compose];
+    end
+
+    subgraph Frontend Internals
+        direction LR
+        Components[UI & View Components];
+        StateMgmt[State Management - Zustand];
+        APICalls[API Service];
+    end
+
+    User --> WebApp;
+    User --> Electron;
+    Electron --> WebApp;
+
+    WebApp --> Components;
+    WebApp --> StateMgmt;
+    WebApp --> APICalls;
+    
+    APICalls ==> FastAPI;
+    
+    FastAPI --> PresidioSvc;
+    FastAPI --> TokenMapSvc;
+    TokenMapSvc --> EncryptionSvc;
+
+    Docker -.-> FastAPI;
+    Docker -.-> WebApp;
+
+    style WebApp fill:#61DAFB,stroke:#000,stroke-width:2px;
+    style FastAPI fill:#009688,stroke:#000,stroke-width:2px,color:#fff;
+    style Electron fill:#9FEAF9,stroke:#000,stroke-width:2px;
+    style PresidioSvc fill:#f0ad4e;
+    style TokenMapSvc fill:#f0ad4e;
+    style EncryptionSvc fill:#f0ad4e;
+    style Docker fill:#2496ED,stroke:#000,stroke-width:2px,color:#fff;
+
+```
+
+### Data Model ERD
+
+```mermaid
+erDiagram
+    SANITIZE_REQUEST ||--|{ SANITIZE_RESPONSE : "generates"
+    SANITIZE_RESPONSE ||--o{ TOKEN_INFO : "contains"
+    SANITIZE_RESPONSE }|..|{ TOKEN_MAP_DATA : "creates"
+    TOKEN_MAP_DATA ||--o{ TOKEN_MAPPING : "has"
+    DETOKENIZE_REQUEST }|..|{ TOKEN_MAP_DATA : "uses"
+    DETOKENIZE_REQUEST ||--|{ DETOKENIZE_RESPONSE : "generates"
+    TOKEN_UPDATE_REQUEST }|..|{ TOKEN_MAP_DATA : "updates"
+    MANUAL_TOKEN_REQUEST }|..|{ TOKEN_MAP_DATA : "updates"
+    REVERT_TOKEN_REQUEST }|..|{ TOKEN_MAP_DATA : "updates"
+
+    SANITIZE_REQUEST {
+        string text
+        dict presidio_config
+    }
+
+    SANITIZE_RESPONSE {
+        string sanitized_text
+        uuid token_map_id PK
+        float processing_time_ms
+        int additional_occurrences
+    }
+
+    TOKEN_INFO {
+        string token
+        string original_value
+        string entity_type
+        int start
+        int end
+        float score
+    }
+
+    TOKEN_MAP_DATA {
+        uuid id PK
+        string original_text
+        datetime created_at
+        datetime expires_at
+    }
+
+    TOKEN_MAPPING {
+        string token PK
+        uuid token_map_id FK
+        string original_value
+        string entity_type
+        float score
+    }
+
+    DETOKENIZE_REQUEST {
+        uuid token_map_id FK
+        string text
+    }
+
+    DETOKENIZE_RESPONSE {
+        string detokenized_text
+        float processing_time_ms
+    }
+
+    TOKEN_UPDATE_REQUEST {
+        uuid token_map_id FK
+        list updates
+    }
+
+    MANUAL_TOKEN_REQUEST {
+        uuid token_map_id FK
+        string text_to_tokenize
+        string entity_type
+        int start
+        int end
+    }
+
+    REVERT_TOKEN_REQUEST {
+        uuid token_map_id FK
+        string token
+    }
+```
