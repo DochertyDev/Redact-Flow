@@ -337,3 +337,53 @@ erDiagram
         string token
     }
 ```
+
+### Tech Stack Diagram
+
+```mermaid
+graph TD;
+    subgraph Frontend
+        React[React];
+        Tailwind[Tailwind CSS];
+        Zustand[Zustand];
+        Axios[Axios];
+    end
+
+    subgraph Backend
+        FastAPI[FastAPI];
+        Python[Python];
+        Presidio[Microsoft Presidio];
+        Uvicorn[Uvicorn];
+    end
+
+    subgraph Desktop
+        Electron[Electron];
+    end
+
+    subgraph Infrastructure
+        Docker[Docker];
+    end
+
+    subgraph Testing
+        Playwright[Playwright];
+        Pytest[Pytest];
+    end
+
+    subgraph BuildTools
+        Vite[Vite];
+        NodeJS[Node.js];
+    end
+
+    React --> Vite;
+    FastAPI --> Python;
+    Uvicorn -- Serves --> FastAPI;
+    Electron -- Packages --> Frontend;
+    Electron -- Packages --> Backend;
+    
+    style Frontend fill:#e1f5ff;
+    style Backend fill:#fff4e1;
+    style Desktop fill:#f3e5f5;
+    style Infrastructure fill:#e8f5e9;
+    style Testing fill:#fff3e0;
+    style BuildTools fill:#fce4ec;
+```
