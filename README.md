@@ -1,6 +1,6 @@
 # RedactFlow
 
-![Screenshot](images\RedactFlowscreenshot.JPG)
+![Screenshot](images/RedactFlowscreenshot.JPG)
 
 ## Project Overview
 
