@@ -1,5 +1,7 @@
 # RedactFlow
 
+![Screenshot](images\RedactFlowscreenshot.JPG)
+
 ## Project Overview
 
 RedactFlow is a local-only web application designed to help users safely process sensitive documents with external Large Language Models (LLMs) and then restore the original Personally Identifiable Information (PII). It achieves this by leveraging Microsoft Presidio for PII detection and anonymization, replacing sensitive data with unique tokens. After LLM processing, the original PII can be restored using a secure token map.
