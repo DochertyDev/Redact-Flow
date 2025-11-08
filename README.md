@@ -8,7 +8,7 @@
 RedactFlow
 </h1>
 
-<h2 align="center">A local-only web application for PII detection, anonymization, and detokenization, ensuring data privacy for LLM usage.</h2>
+<h2 align="center">Keep your data private, anonymize sensitive documents locally for secure LLM processing.</h2>
 
 <div align="center">
 
