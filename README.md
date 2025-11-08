@@ -46,7 +46,7 @@ RedactFlow
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
 - [Support the Project](#-support-the-project)
-- [Disclaimer](#disclaimer)
+- [Disclaimer](#️-disclaimer)
 
 ## 📄 Overview
 
@@ -309,7 +309,7 @@ Before you begin, ensure you have the following installed:
     Open your terminal (e.g., PowerShell, Command Prompt, Git Bash) and navigate to the main `Redact-Flow` directory where the `docker-compose.yml` file is located.
 
     ```bash
-    cd C:\Users\Sean\Projects\Redact-Flow
+    cd ~\Redact-Flow
     ```
 
 2.  **Build the Docker Images:**
@@ -452,7 +452,7 @@ Currently, there are no specific troubleshooting steps documented. If you encoun
 </a>
 </div>
 
-We welcome contributions from the community! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request. Please refer to `DEVELOPER.md` for more detailed contribution guidelines.
+We welcome contributions from the community! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request. Please refer to **[DEVELOPER.md](DEVELOPER.md)** for more detailed contribution guidelines.
 
 ## 🌟 Support the Project
 
@@ -464,6 +464,6 @@ We welcome contributions from the community! If you have suggestions for improve
   </p>
 </div>
 
-## Disclaimer
+## ⚠️ Disclaimer
 
 This software is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software. Users are responsible for ensuring compliance with all applicable data privacy regulations when using RedactFlow.
