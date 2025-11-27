@@ -36,6 +36,10 @@ function App() {
       });
     } else {
       console.warn('Electron context not found. Running in browser mode or preload script failed.');
+      // Set default backend URL for browser mode (Docker or local development)
+      const backendURL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000/api';
+      apiService.setBaseURL(backendURL);
+      console.log(`API base URL set to browser mode default: ${backendURL}`);
     }
   }, []);
 

@@ -1,14 +1,11 @@
 # Use an official Python runtime as a parent image
-FROM python:3.15-rc-alpine3.22
+FROM python:3.11-alpine
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Install system dependencies required for spaCy and other packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --no-cache build-base gcc
 
 # Copy the requirements file and install Python dependencies
 COPY requirements.txt .

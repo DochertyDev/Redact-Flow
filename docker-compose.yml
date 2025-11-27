@@ -25,8 +25,11 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules # Exclude node_modules from host mount
+      - node_modules_volume:/app/node_modules
     depends_on:
       - backend
     # Command is already defined in Dockerfile, but can be overridden here if needed
     # command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  node_modules_volume:

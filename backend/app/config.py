@@ -39,7 +39,12 @@ class Settings(BaseSettings):
 
     HOST: str = "127.0.0.1"
     PORT: int = 8000
-    CORS_ORIGINS: List[str] = ["http://localhost:5173"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:3000",
+    ]
     TOKEN_MAP_TTL_SECONDS: int = 3600  # Time-to-live for token maps in seconds (1 hour)
     LOG_LEVEL: str = "INFO"
 
